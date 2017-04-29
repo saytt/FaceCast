@@ -1,0 +1,38 @@
+extends layout
+
+block content
+    div(id='main')
+        div(class='inner')
+            header(id='header')
+                h1= title
+            section(id='banner')
+                div(class='content')
+                    header
+                        h2= 'Postulant'
+                        
+                      
+                    table
+                        tr
+                          th mail
+                          th Etat
+                          th modifier
+
+                          each postulant, i in postulantlist
+
+
+                             tr
+                                  
+                                  td= postulant.candidat
+                                  td= postulant.statut
+                                  td
+                                      form(name="updateEtat",method="post",action="/postulation/update/"+postulant._id)
+                                        select(name="etat")
+                                            if(postulant.statut == "enAttente")
+                                              option(value="Retenu") Retenue
+                                              option(value="Refuser") Refuser 
+                                            if(postulant.statut == "Retenu")
+                                              option(value="Accepter") Accepter
+                                              option(value="Refuser") Refuser
+                                            if(postulant.statut == "Accepter" || postulant.statut == "Refuser")
+                                              option(value="Terminer") Terminer
+                                        button#btnSubmit(type="submit") Modifier

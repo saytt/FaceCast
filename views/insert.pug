@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    div(id='main')
+        div(class='inner')
+            header(id='header')
+                h1= title
+            section(id='banner')
+                div(class='content')
+                    header
+                        h2= 'Formulaire'
+                        form#formAddoffre(name="addoffre",method="post",action="/insert/addoffre")
+                           input#inputoffreNom(type="text", placeholder="Nom", name="Nom", required)
+                           SELECT(name="Type")
+                              OPTION Film
+                              OPTION Spectacle  
+                           input#inputoffreNbjour(type="number", placeholder="Nombre de jours", name="Nbjours", required)   
+                           input#inputoffreRole(type="text", placeholder="Rôle demandé", name="Role", required)  
+                           input#inputoffreDate(type="date",placeholder="Date debut", name="Date", required ) 
+                           input#inputoffreNbFigurant(type="text", placeholder="Nombre de figurants nécessaire", name="NbFigurant", required)    
+                           button#btnSubmit(type="submit") submit

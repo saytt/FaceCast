@@ -1,0 +1,39 @@
+extends layout
+
+block content
+    div(id='main')
+        div(class='inner')
+            header(id='header')
+                h1= title
+            section(id='banner')
+                div(class='content')
+                    header
+                        h2= 'Noms'
+                        
+                      
+                    table
+                        tr
+                          th Evenement
+                          th Type
+                          th durée (jour)
+                          th Rôle
+                          th Nombre de figurants
+                          th Date de debut
+                          th Postulants
+                          th Suppression
+
+                          each offre, i in offrelist
+
+
+                             tr
+                                form(name="addoffre",method="post",action="/offres/delete")
+                                  td= offre.offreNom
+                                  td= offre.offreType
+                                  td= offre.offreNbjours
+                                  td= offre.offreRole
+                                  td= offre.offreNbFigurant
+                                  td= offre.offreDate
+                                  td
+                                    a(href='/postulation/postulant?id='+offre._id) Postulants
+                                  td 
+                                    a(href='/offres/delete?id='+offre._id) Supprimer

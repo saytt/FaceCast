@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    div(id='main')
+        div(class='inner')
+            header(id='header')
+                h1= title
+            section(id='banner')
+                div(class='content')
+                    header
+                        h2= 'Noms'
+                        
+                      
+                    table
+                        tr
+                          th Nom
+                          th operation
+
+                          each event, i in eventlist
+
+
+                             tr
+                                form(name="addoffre",method="post",action="/offre/delete")
+                                  
+                                td= event
+                                td 
+                                  a(href='/Event/mort?nom='+event) Supprimer

@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    meta(charset='utf-8',lang='fr')
+    title= title
+    link(rel='stylesheet', href='stylesheets/style.css')
+    link(rel='stylesheet', href='/assets/css/main.css')
+    
+  body
+    div(id='wrapper')
+        block content
+        
+        div(id='sidebar')
+            div(id='inner')
+                nav(id='menu')
+                    header(class='major', class='gauche')
+                        h2='Menu'
+                    ul(class='gauche')
+                        li
+                            a(href='/') Accueil
+                        li
+                            a(href='/offres') Toutes les offres
+                        li
+                            a(href='/insert') Ajout offres
+                        li
+                            a(href='/Event') Suppression d'evenement
+                       
+
+    script(src='assets/js/jquery.min.js')
+    script(src='assets/js/skel.min.js')
+    script(src='assets/js/util.js')
+    script(src='assets/js/main.js')
